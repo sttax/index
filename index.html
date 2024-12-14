@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Painel De Login</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+</head>
+<body>
+  <!-- Vídeo de fundo -->
+  <video id="background-video" autoplay loop muted>
+    <source src="car.mp4" type="video/mp4">
+  </video>
+   <audio id="music" loop>
+    <source src="365.mp3" type="audio/mp3">
+    Seu navegador não suporta a tag de áudio.
+  </audio>
+  <div class="music-btn-container">
+    <button onclick="playMusic()" class="music-btn">
+      <span class="music-icon">🎶</span> Tocar Música
+    </button>
+  </div>
+
+  <body>
+    <!-- Tela de Carregamento -->
+    <div id="loading-screen">
+        <div class="loader"></div>
+    </div>
+    <div id="content" style="display:none;">
+      <h1>Bem-vindo ao meu site!</h1>
+      <p>O conteúdo da página foi carregado.</p>
+  </div>
+  <div class="login-box">
+    <div class="login-header">
+      <header>Painel</header>
+    </div>
+    <form onsubmit="login(); return false;">
+      <div class="input-box">
+        <input type="text" id="username" class="input-field" placeholder="Email" required>
+        <input type="password" id="password" class="input-field" placeholder="Senha" required>
+      </div>
+
+      <div class="forgot">
+        <section>
+          <input type="checkbox" id="remember" class="check" />
+          <label for="remember">Lembrar-me</label>
+        </section>
+        <a href="forgot-password.html">Esqueceu a senha?</a>
+      </div>
+
+      <div class="input-submit">
+        <button type="submit" class="submit-btn">
+          <label>ENTRAR</label>
+        </button>
+      </div>
+    </form>
+    <div class="sign-up-link">
+      <p>Ainda não tem conta? <a href="SignUp.html">Criar conta</a></p>
+    </div>
+  </div>
+  <script>
+    // Função para tocar a música
+    function playMusic() {
+      var music = document.getElementById('music');
+      music.play();  // Tocar a música quando o usuário clicar no botão
+    }
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>
